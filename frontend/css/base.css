@@ -1,0 +1,46 @@
+/* base.css — design tokens (colours, spacing, radius, fonts), reset and typography.
+   Loaded first; every other stylesheet uses the variables defined here.
+   Delivery Command Centre — modern theme.
+   Soft lavender canvas, indigo → pink → amber gradients, rounded white cards, Inter. */
+:root{
+  --bg:#F6F6FB;--paper:#FFFFFF;
+  --ink:#0F1222;--ink-2:#4B5068;--ink-3:#8A8FA6;
+  --tint:#F7F6FD;--rule:#E7E6F2;--rule-2:#F0EFF7;
+  --blue:#6C63F0;--blue-2:#5A50E6;--navy:#1E1B4B;--bright:#A78BFA;--pale:#E9E7FD;--teal:#2FB9A0;
+  --grad:linear-gradient(90deg,#6C63F0 0%,#B06AD8 52%,#EC6E86 100%);
+  --grad-text:linear-gradient(90deg,#8E6BE6 0%,#D96C9C 50%,#F2A15A 100%);
+  --grad-soft:linear-gradient(135deg,#EFEEFF 0%,#F8EEF7 55%,#FFF3E8 100%);
+  --good:#12A26B;--warn:#D98E04;--bad:#E5484D;
+  --good-t:#E6F6EE;--warn-t:#FDF3DC;--bad-t:#FDECEC;
+  --good-r:#BDE7D2;--warn-r:#F4DDA6;--bad-r:#F6C6C7;
+  --shadow:0 1px 2px rgba(20,18,60,.04),0 10px 30px rgba(84,72,190,.07);
+  --shadow-lg:0 2px 6px rgba(20,18,60,.05),0 24px 60px rgba(84,72,190,.14);
+  --glow:0 10px 28px rgba(108,99,240,.35);
+  --display:"Inter",system-ui,-apple-system,sans-serif;
+  --body:"Inter",system-ui,-apple-system,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --s-1:4px;--s-2:8px;--s-3:12px;--s-4:16px;--s-5:24px;--s-6:32px;--s-7:48px;--s-8:72px;
+  --radius:14px;--radius-lg:22px;--nav-w:248px;--measure:70ch;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--body);font-size:15px;line-height:1.6;color:var(--ink-2);background:var(--bg);-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(900px 500px at 85% -10%,rgba(167,139,250,.18),transparent 60%),radial-gradient(700px 420px at 10% 0%,rgba(236,110,134,.08),transparent 60%);background-attachment:fixed}
+h1,h2,h3,h4{font-family:var(--display);font-weight:800;letter-spacing:-0.03em;color:var(--ink);margin:0;line-height:1.12}
+h1{font-size:clamp(30px,3.4vw,44px)}h2{font-size:22px;font-weight:700;letter-spacing:-0.02em}h3{font-size:18px;font-weight:700;letter-spacing:-0.02em}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+p{margin:0 0 var(--s-3)}
+.grad-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);
+  border:1.5px solid rgba(47,185,160,.45);background:rgba(47,185,160,.06);padding:4px 12px;border-radius:999px;line-height:1.4}
+.eyebrow svg.ic{width:13px;height:13px}
+.mono{font-family:var(--mono);font-size:11px}
+.num,td.r,.tnum{font-variant-numeric:tabular-nums}
+.stat{font-family:var(--display);font-size:clamp(30px,3.2vw,42px);font-weight:800;color:var(--ink);letter-spacing:-0.04em;line-height:1}
+.stat:not([style]){background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.muted{color:var(--ink-3)}
+.hide{display:none!important}
+.good{color:var(--good)}.bad{color:var(--bad)}.warn{color:var(--warn)}
+svg.ic{width:16px;height:16px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+

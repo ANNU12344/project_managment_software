@@ -1,0 +1,38 @@
+<!doctype html>
+<!--
+  Delivery Command Centre — the single page. Served by the backend (backend/src/app.js) from this folder.
+  All screens are drawn into #root by js/main.js; the empty containers below are filled by:
+    #drawer  project detail        js/views/project-drawer.js
+    #ask     Ask DCC chat          js/views/ask.js
+    #modal   dialogs               js/components/overlays.js
+    #tip     formula tooltips      js/core/tooltip.js
+    #print   PDF status report     js/views/print-report.js
+    #toast   short messages        js/components/toast.js
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Delivery Command Centre — Uneecops</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/assets/logo.png">
+<!-- order matters: tokens first, then layout, shared components, screen-specific styles -->
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/views.css">
+</head>
+<body>
+<div id="root"></div>
+<div id="scrim"></div>
+<div id="drawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="dr-title"></div>
+<div id="ask" class="drawer" role="dialog" aria-modal="true" aria-label="Ask DCC"></div>
+<div id="modal"></div>
+<div id="tip" role="tooltip"></div>
+<div id="print"></div>
+<div id="toast" role="status"></div>
+<script type="module" src="/js/main.js"></script>
+</body>
+</html>

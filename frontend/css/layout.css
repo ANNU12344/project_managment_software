@@ -1,0 +1,77 @@
+/* layout.css — page frame: the login screen and the app shell (sidebar, top bar, main area).
+   Used by js/views/login.js and js/views/shell.js. */
+
+/* ---------- login ---------- */
+.login{min-height:100vh;display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:var(--s-6);padding:var(--s-6) var(--s-8)}
+.login .brandside{display:flex;flex-direction:column;gap:var(--s-6);padding:var(--s-6) 0}
+.login .logo-login{width:120px;height:auto;background:#fff;border-radius:18px;padding:6px;box-shadow:var(--shadow);align-self:flex-start}
+.login .brandside .mark span{color:var(--blue)}
+.login .brandside h1{font-size:clamp(44px,5.6vw,76px);line-height:1.02;letter-spacing:-0.045em;margin:var(--s-4) 0;max-width:12ch}
+.login .brandside h1 em{font-style:normal;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.login .brandside p{font-size:18px;color:var(--ink-2);max-width:52ch}
+.login .brandside .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal)}
+.login .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-4)}
+.login .pillars div{background:var(--paper);border:1px solid var(--rule);border-radius:var(--radius);padding:var(--s-4) var(--s-4);box-shadow:var(--shadow)}
+.login .pillars b{display:block;font-weight:700;color:var(--ink);font-size:15.5px;margin:6px 0 4px;letter-spacing:-0.01em}
+.login .pillars span{color:var(--ink-2);font-size:13px;line-height:1.5;display:block}
+.login .pillars .n{font-weight:800;font-size:13px;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.login .formside{background:var(--paper);border:1px solid var(--rule);border-radius:var(--radius-lg);padding:var(--s-7) var(--s-6);box-shadow:var(--shadow-lg);max-width:480px;width:100%;justify-self:center}
+.login .formside .eyebrow{color:var(--blue);border-color:rgba(108,99,240,.35);background:rgba(108,99,240,.06)}
+.login .roles{margin-top:var(--s-5);border-top:1px solid var(--rule);padding-top:var(--s-4);font-size:12.5px;color:var(--ink-3)}
+.login .roles code{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);background:var(--tint);padding:1px 6px;border-radius:6px}
+@media(max-width:1000px){.login{grid-template-columns:1fr;padding:var(--s-5)}.login .pillars{grid-template-columns:1fr}}
+
+/* ---------- app shell ---------- */
+.shell{display:grid;grid-template-columns:var(--nav-w) minmax(0,1fr);min-height:100vh}
+aside{background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-right:1px solid var(--rule);padding:var(--s-5) var(--s-3) var(--s-3);position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column}
+aside .brand{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:0 var(--s-3) var(--s-4)}
+aside .brand img{width:112px;height:auto;object-fit:contain;flex:none;border-radius:14px;background:#fff;padding:4px;box-shadow:var(--shadow)}
+aside .brand .sub{padding:0}
+aside .mark{font-weight:800;font-size:15px;letter-spacing:-0.02em;color:var(--ink);line-height:1.2;display:block}
+aside .mark span{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+aside .sub{padding:0 var(--s-3) var(--s-4);font-size:12px;color:var(--ink-3)}
+aside nav{padding:var(--s-2) 0;display:flex;flex-direction:column;gap:2px}
+aside .navgrp{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:var(--s-4) var(--s-3) var(--s-2)}
+aside a.nav{display:flex;align-items:center;gap:11px;padding:10px var(--s-3);color:var(--ink-2);font-size:14px;font-weight:500;border-radius:12px;min-height:44px;transition:background 140ms ease-out,color 140ms ease-out}
+aside a.nav:hover{background:var(--tint);color:var(--ink);text-decoration:none}
+aside a.nav.on{background:var(--grad);color:#fff;font-weight:600;box-shadow:var(--glow)}
+aside .who{margin-top:auto;padding:var(--s-4);background:var(--tint);border-radius:var(--radius);font-size:12.5px;color:var(--ink-3);display:flex;flex-direction:column;gap:var(--s-2)}
+aside .who b{color:var(--ink);display:block;font-size:14px}
+aside .who button{align-self:flex-start;background:var(--paper);border:1px solid var(--rule);color:var(--ink-2);font-family:var(--body);font-size:12px;font-weight:600;padding:7px 14px;border-radius:10px;cursor:pointer;min-height:36px}
+aside .who button:hover{border-color:var(--blue);color:var(--blue)}
+.mainwrap{min-width:0;display:flex;flex-direction:column}
+.topbar{display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3) var(--s-7);background:rgba(246,246,251,.8);backdrop-filter:blur(12px);border-bottom:1px solid rgba(231,230,242,.8);position:sticky;top:0;z-index:40;min-height:64px;flex-wrap:wrap}
+.topbar .crumb{font-size:13px;color:var(--ink-3)}
+.topbar .crumb b{color:var(--ink);font-weight:600}
+.topbar .sp{margin-left:auto}
+.viewas{background:var(--grad);color:#fff;display:flex;align-items:center;gap:var(--s-3);padding:10px var(--s-7);flex-wrap:wrap;font-size:13.5px}
+.viewas .eyebrow{color:#fff;border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.14)}
+.viewas b{color:#fff;font-weight:700}
+.viewas span.r{color:rgba(255,255,255,.85)}
+.viewas .sp{margin-left:auto}
+.viewas select{background:rgba(255,255,255,.18);color:#fff;border-color:rgba(255,255,255,.4);min-height:38px;font-size:13px;width:auto;max-width:210px}
+.viewas select option,.viewas select optgroup{color:var(--ink)}
+.viewas .btn{border-color:#fff;background:#fff;color:var(--blue);box-shadow:none}
+.viewas .btn:hover{background:rgba(255,255,255,.9)}
+main{padding:var(--s-6) var(--s-7) var(--s-8);max-width:1440px;width:100%;min-width:0}
+@media(max-width:1000px){
+  aside .brand{flex-direction:row;align-items:center}
+  aside .brand img{width:64px}
+  .shell{grid-template-columns:1fr}
+  aside{position:static;height:auto;padding:var(--s-4)}
+  aside nav{flex-direction:row;flex-wrap:wrap}
+  aside .navgrp{display:none}
+  aside .who{flex-direction:row;align-items:center;flex-wrap:wrap;margin-top:var(--s-3)}
+  .topbar,.viewas{padding-left:var(--s-5);padding-right:var(--s-5)}
+  main{padding:var(--s-5) var(--s-4) var(--s-7)}
+}
+
+.pagehead{padding-bottom:var(--s-5);margin-bottom:var(--s-5)}
+.pagehead h1{margin-top:var(--s-4)}
+.pagehead p.lede{margin:var(--s-3) 0 0;max-width:72ch;color:var(--ink-2);font-size:16.5px}
+.pagehead .meta{margin-top:var(--s-4);display:flex;gap:var(--s-3);flex-wrap:wrap;font-size:13px;color:var(--ink-3)}
+.pagehead .meta > div{background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:5px 14px}
+.pagehead .meta b{color:var(--ink);font-variant-numeric:tabular-nums}
+.pagehead .row{display:flex;gap:var(--s-5);align-items:flex-end;flex-wrap:wrap}
+.pagehead .row .grow{flex:1;min-width:280px}
+
